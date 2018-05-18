@@ -11,7 +11,7 @@ type Props = {};
 export default class Hr extends Component<Props> {
 	render() {
 		return (
-			<View>
+			<View style={{width: '100%'}}>
 				<LinearGradient style={styles.gradient} colors={[ 'rgba(255,255,255,0)', 'rgba(255,255,255,0.8)', 'rgba(255,255,255,0)']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 1 }}/>
 			</View>
 		)

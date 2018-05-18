@@ -5,6 +5,10 @@ import { StackNavigator }	from 'react-navigation'
 import Home					from '../screens/Home'
 import Options				from '../screens/Options'
 import PhaseOne				from '../screens/PhaseOne'
+import PhaseTwo				from '../screens/PhaseTwo'
+import PhaseThree			from '../screens/PhaseThree'
+import PhaseThreeGuide		from '../screens/PhaseThreeGuide'
+import PhaseFinal			from '../screens/PhaseFinal'
 
 import Icon from 'react-native-vector-icons/Entypo';
 
@@ -46,14 +50,15 @@ const ImageHeader = (title, typeScreen) => (
 		}
 
 		{typeScreen && typeScreen === 'screen' &&
-			<View style={styles.imageHeader.screenView}>
-				<View style={styles.imageHeader.screenChevron}>
-					<Icon name="chevron-thin-left" size={20} onPress={() => Actions.pop()} />
-				</View>
-				<View style={styles.imageHeader.screenTitleView}>
-					<Text style={styles.imageHeader.screenTitle}>{title || 'None'}</Text>
-				</View>
+		<View style={styles.imageHeader.screenMainView}>
+			<View style={styles.imageHeader.screenChevron}>
+				<Icon name="chevron-thin-left" size={20} onPress={() => Actions.pop()} />
 			</View>
+			<View style={styles.imageHeader.screenView}>
+				<Text style={styles.imageHeader.screenTitle}>{title || 'None'}</Text>
+			</View>
+			<View style={styles.imageHeader.screenChevron}><View><Icon name="chevron-thin-right" color={'transparent'} size={20} /></View></View>
+		</View>
 		}
 	</View>
 );
@@ -67,7 +72,11 @@ export const Root = () => {
 						<Scene key="Home" component={Home} hideNavBar initial/>
 						<Scene key="Options" navBar={ImageHeader.bind(null, 'PERSONNALITÉ', 'modal')} component={Options}/>
 					</Modal>
-					<Scene key="PhaseOne" navBar={ImageHeader.bind(null, 'PHASE 1', 'screen')} hideNavBar={false} component={PhaseOne} />
+					<Scene key="PhaseOne" navBar={ImageHeader.bind(null, 'PHASE 1', 'screen')} hideNavBar={false} component={PhaseOne}/>
+					<Scene key="PhaseTwo" navBar={ImageHeader.bind(null, 'PHASE 2', 'screen')} hideNavBar={false} component={PhaseTwo}/>
+					<Scene key="PhaseThree" navBar={ImageHeader.bind(null, 'PHASE 3', 'screen')} hideNavBar={false} component={PhaseThree}/>
+					<Scene key="PhaseThreeGuide" navBar={ImageHeader.bind(null, 'PHASE 3', 'screen')} hideNavBar={false} component={PhaseThreeGuide}/>
+					<Scene key="PhaseFinal" navBar={ImageHeader.bind(null, 'FIN', 'screen')} hideNavBar={false} component={PhaseFinal}/>
 				</Scene>
 			</Scene>
 		</Router>
@@ -85,19 +94,25 @@ const styles = {
 			justifyContent: 'flex-start', alignItems: 'center'
 		},
 		modalTitleView: {
-			alignItems: 'center', borderColor: 'white', borderWidth: 0, borderStyle: 'solid'
+			alignItems: 'center', justifyContent: 'center',
+			borderColor: 'white', borderWidth: 0, borderStyle: 'solid'
 		},
 		modalTitle: {
 			fontFamily: 'Futura-Medium', color: 'white', fontSize: 17, fontWeight: '700'
 		},
+		screenMainView: {
+			flexDirection: 'row', justifyContent: 'space-between'
+		},
 		screenView: {
-			flexDirection: "row", flex: 1, alignItems: 'center', width: '100%'
+			justifyContent: 'center',
 		},
 		screenChevron: {
-			flex: 1, borderColor: 'white', borderWidth: 0, borderStyle: 'solid', margin: 20
+			alignItems: 'center',
+			justifyContent: 'center',
+			padding: 20,
 		},
 		screenTitleView: {
-			flex: 2, alignItems: 'flex-start', borderColor: 'white', borderWidth: 0, borderStyle: 'solid'
+			// borderColor: 'white', borderWidth: 0, borderStyle: 'solid'
 		},
 		screenTitle: {
 			fontFamily: 'Futura-Medium', color: 'white', fontSize: 17, fontWeight: '700'

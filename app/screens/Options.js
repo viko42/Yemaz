@@ -7,16 +7,20 @@ import {
   View,
   ImageBackground,
   ScrollView,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  StatusBar
 } from 'react-native';
 
-import { Button } from 'react-native-elements';
-import {Actions} from 'react-native-router-flux';
+import { Button }	from 'react-native-elements';
+import { Actions }	from 'react-native-router-flux';
 
-import { FormLabel, FormInput, FormValidationMessage,
+import {
+	FormLabel, FormInput, FormValidationMessage,
 } from 'react-native-elements'
 
-import {LinearGradient} from 'expo';
+import {
+	LinearGradient
+} from 'expo';
 
 import Hr from '../components/Hr'
 import Background from '../components/Background'
@@ -33,6 +37,7 @@ export default class Options extends Component {
 	}
 	componentWillMount() {
 		backgroundImage = require('../img/bg-tiny.png')
+		StatusBar.setHidden(true);
 	}
 	goTo = () => {
 		Actions.PhaseOne();
