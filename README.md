@@ -1,6 +1,6 @@
 # React-native-app Yemaz
 
-## Check the demo (GIF) here: https://im4.ezgif.com/tmp/ezgif-4-964c711459.gif
+## Check the demo here: https://streamable.com/2gnfi
 ### Credits
 
 - Victor de ladonchamps https://www.behance.net/gallery/62796007/Yemaz
