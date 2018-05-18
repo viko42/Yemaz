@@ -1,3 +1,3 @@
 # React-native-app Yemaz
 
-![alt text](https://preview.ibb.co/euAgDy/yemaz1.jpg)
+![alt text](https://image.ibb.co/mUPV6J/yemaz1.jpg)
